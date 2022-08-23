@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <title>&#128068;</title>
+    <title>&#128068; Balli</title>
 
     <!-- Recommended minimum -->
     <meta property="og:title" content="&#128068;">
@@ -33,7 +33,7 @@ body {
   font-size: 14px;
   font-weight:600;
   font-family: system-ui, sans-serif;
-  word-spacing: 1px;
+  word-spacing:1px;
   line-height: 1.4;
   color: var(--textcolor);
   background: var(--bgcolor);
@@ -45,7 +45,7 @@ body {
 /* ------- Sections ------- */
 
 section {
-  padding: calc(2em + 2vw) 5vw 8vw 5vw;
+  padding: calc(3em + 5vw) 5vw 8vw 5vw;
   /* ! Everything below is needed ! */
   display: none;
   position: absolute;
@@ -66,7 +66,7 @@ section#home { /* Show #home by default */
 /* ------- Header ------- */
 
 header {
-  padding: 2vw 5vw 0 5vw;
+  padding: 5vw 5vw 0 5vw;
   display: flex;
   flex-wrap: wrap;
   position: absolute;
@@ -75,7 +75,7 @@ header {
 }
 
 header h1 {
-  font-size: 1.4em;
+  font-size: 1.2em;
   flex: 1; /* pushes nav to the right */
   white-space: nowrap;
   padding: 0 5vw .5em 0;
@@ -97,7 +97,7 @@ a:hover {
 }
 
 section h1 {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: #a52a2a;
   font-weight: bold;
   margin: 0 0 1em 0;
@@ -143,6 +143,7 @@ hr {
   border: 0;
   background: brown;
   margin: 1.2em 0;
+
 }
 
 abbr {
@@ -499,7 +500,6 @@ article time {
     <body>
 
     <header>
-		<h1>
       <nav>
         <a href="#home">Home</a>
         <a href="#preferences">Preferences</a>
@@ -508,7 +508,6 @@ article time {
         <a href="#articles">Articles</a>
         <a href="#contacts">Contacts</a>
       </nav>
-      		</h1>
     </header>
 
     <main>
@@ -520,10 +519,9 @@ article time {
 
 
 	    <section id="home"> <!-- HOME -->
-	    <hr>
-	    <br>
-
+		    <hr>
 	    <p><strong>राम राम, </strong>Here I will try to express my thoughts that i would not in real  life.   </p>
+
 
 
 
@@ -540,10 +538,7 @@ article time {
 
 
       <section id="preferences"> <!-- ABOUT -->
-      <hr>
-      <br>
-
-           <p>Trying this new <a href="#new-page">page</a> if it works.</p>
+	      <hr>
 	<p>Movies</p>
 	<p>Books</p>
 	<p>Shows</p>
@@ -553,27 +548,27 @@ article time {
 	<p>Quotes</p>
 	<p>Persons</p>
 
-        <figure>
+  <!--      <figure>
           <a href="#img-about">
             <img loading="lazy" alt="" src="//dummyimage.com/1200x600/ddd/bbb" width="1200" height="600">
           </a>
           <figcaption>Example of an image with a link to a larger version.</figcaption>
-        </figure>
+  </figure>-->
 
       </section>
 
 
 
 
-	<section id="new-page"> <!-- ANOTHER PAGE -->
-        <hr>
+<!--	<section id="new-page">  ANOTHER PAGE
+		<hr>
         	<p>Now it works</p>
 		<br>
         <p><a href="#preferences">← Go back</a></p>
-        </section>
+</section> -->
 
 	<section id="jokes"> <!-- ANOTHER PAGE -->
-        <hr>
+		<hr>
 	<ul><a href="#cool-jokes">Cool Jokes</a></ul>
 	<ul><a href="#uncool-jokes">Uncool Jokes</a></ul>
 	<br>
@@ -581,17 +576,16 @@ article time {
         </section>
 
 	<section id="cool-jokes"> <!-- ANOTHER PAGE -->
-	<hr>
-
+		<hr>
 	<p>1. After the funeral, when everyone went home,<span class="spoiler"> I came back with a shovel.</span></p>
 	<br>
         <p><a href="#jokes">← Go back</a></p>
         </section>
 
 	<section id="uncool-jokes"> <!-- ANOTHER PAGE -->
-        <hr>
+		<hr>
 		<p>Imagine I wake up in the middle of the night, all terrified and my parents are like, "Ruk ja beta, camera to on kar lene de" </p>
-	<br>
+		<br>
         <p><a href="#jokes">← Go back</a></p>
         </section>
 
@@ -599,7 +593,6 @@ article time {
 
       <section id="blogs"> <!-- NEWS -->
 	      <hr>
-	      <br>
 	    <ul>
 		    <li><a href="#Some-Internet-manners-that-I-learned-lately">Some Internet manners that I learned lately</a></li>
 		    <li><a href="#Is-globalisation-really-necessary?">Is globalisation really necessary?</a></li>
@@ -616,7 +609,7 @@ article time {
 	    </ul>
 
 
-        <article>
+ <!--       <article>
           <h2>Blogging with Joe Bloggs <time datetime="2020-10-10">10.10.2020</time></h2>
           <p> One <em>could</em> use this setup to write <s>a blog</s> short updates. For images make sure to use the <code>loading="lazy"</code> attribute, so they get loaded only when needed.<label for="lazy">1</label><input type="checkbox" id="lazy"><small>
 
@@ -628,86 +621,84 @@ article time {
         <article>
           <h2><a href="https://example.com">Why Your Cat Bites You</a> <time datetime="2004-12-12">12.12.2004</time></h2>
           <p>Honestly you don't want to know.</p>
-        </article>
+	</article> -->
 
       </section>
 
 	<section id="Some-Internet-manners-that-I-learned-lately">
-	<hr>
-
+		<hr>
         	<p>How to ask questions:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="Is-globalisation-really-necessary?">
-	<hr>
-
+		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="How-long-does-it-take-to-change-opinion-of-people?">
-        <hr>
+		<hr>
         	<p>O:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="Why-do-we-feel-good-when-a-big-man-falls.">
-        <hr>
+		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="Some-stories-of-Indian-Police">
 		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="Stalking-in-medieval-India">
 		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="Views-of-some-Scholars-and-some-Laymans-on-Insanity">
 		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="Should-you-keep-following-what-supports-your-ideology?">
 		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="Impacts-of-Reviews">
-        <hr>
+		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="How to-be-a-modern-Atheist">
-        <hr>
+		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
 	<section id="ptsd">
-        <hr>
+		<hr>
         	<p>Let's find out:</p>
-	<br>
+		<br>
         <p><a href="#blogs">← Go back</a></p>
         </section>
 
@@ -726,12 +717,8 @@ article time {
 
 
       <section id="bookmarks"> <!-- PHOTOS -->
-   <hr>
-   <br>
-
-	<h1>Here are some of my favorite Bookmarks:</h1>
-
-        <p>Bookmarks</p>
+	      <hr>
+        <h1>Bookmarks</h1>
 
         <!-- You can use this grid of images in any page -->
 
@@ -752,14 +739,8 @@ article time {
 
 
       <section id="articles"> <!-- PORTFOLIO -->
-   <hr>
-   <br>
-
-
-
-
-
-	<p>Some Interesting Articles that I liked:</p>
+	      <hr>
+	<h1>Some Interesting Articles that I liked:</h1>
 	<ul><a href="https://en.wikipedia.org/wiki/Notes_on_Nationalism"target="_blank">Notes on Nationalism</a></ul>
 	<ul><a href="https://www.marxists.org/bookmarks/bhagat-singh/index.htm"target="_blank">Notes of Bhagat Singh</a></ul>
 	<ul><a href="https://rgu.ac.in/wp-content/uploads/2021/02/Download_611.pdf"target="_blank">Short Notes on Western Political Thinkers</a></ul>
@@ -815,13 +796,12 @@ article time {
 
 
 	<section id="who-supported-hitler"> <!-- ANOTHER PAGE -->
-	<hr>
-
-
+		<hr>
 	<p>The industrialists (big business guys) sided with Hitler because they were scared of communism (which would destroy their businesses). The Christian churches also sided with Hitler because communism was a common enemy. The poor and unemployed approved of Hitler because he created policies that gave them food and other basic necessities in a dire time (the depression).</p>
 	<p>Youth who were brought up in the Hitler youth (propaganda) were fanatical. They were empowered by the Nazi State and repressed those who were less than absolutely supportive of fascism. Many older people (above school age) were a little ore critical of the Nazi state, but of course you had to be quiet about this. </p>
 	<p>Many Germans were very bitter about the Treaty of Versailles, so Hitler was was also a good channel for that anger. Some people were supportive of Hitler's desire to promote Germany until the war became reality. </p>
 	<p>-from Reddit</p>
+
 	<br>
         <p><a href="#articles">← Go back</a></p>
         </section>
@@ -831,9 +811,7 @@ article time {
 
 
        <section id="contacts">
-       <hr>
-       <br>
-
+	       <hr>
 		<h1>You can connect with me here:</h1>
 		<p><strong>Email:</strong><a href="mailto:jumpherkai@protonmail.com"target="_blank">  jumpherkai@protonmail.com</a></p>
 		<p><strong>IRC:</strong>  ramram@libera.chat</p>
