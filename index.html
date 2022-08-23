@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>&#128068;</title>
+
+    <!-- Recommended minimum -->
+    <meta property="og:title" content="&#128068;">
+    <meta property="og:image" content="&#128068;">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box;
+
+  /* Color scheme */
+
+  --textcolor: #121212;
+  --bgcolor: #fff;
+  --highlight: #2749c9;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --textcolor: #000000;
+    --bgcolor: #eadab1;
+    --highlight: #017354;
+  }
+}
+
+body {
+  font-size: 14px;
+  font-weight:600;
+  font-family: system-ui, sans-serif;
+  word-spacing: 1px;
+  line-height: 1.4;
+  color: var(--textcolor);
+  background: var(--bgcolor);
+  position: relative;
+  max-width: 64em;  /* remove this for a full-width layout */
+  margin: 0 auto;  /* centers the layout */
+}
+
+/* ------- Sections ------- */
+
+section {
+  padding: calc(2em + 2vw) 5vw 8vw 5vw;
+  /* ! Everything below is needed ! */
+  display: none;
+  position: absolute;
+  top: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bgcolor);
+}
+
+section:target { /* Show section */
+  display: block;
+}
+
+section#home { /* Show #home by default */
+  display: block;
+}
+
+/* ------- Header ------- */
+
+header {
+  padding: 2vw 5vw 0 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 1.4em;
+  flex: 1; /* pushes nav to the right */
+  white-space: nowrap;
+  padding: 0 5vw .5em 0;
+}
+
+nav a:not(:last-of-type) {
+  margin-right: 1.5vw;
+}
+
+/* ------- General ------- */
+
+a {
+  text-decoration: none;
+  color: var(--highlight);
+}
+
+a:hover {
+  border-bottom: 1px solid;
+}
+
+section h1 {
+  font-size: 1.3em;
+  color: #a52a2a;
+  font-weight: bold;
+  margin: 0 0 1em 0;
+}
+
+h2, h3, h4 {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 1.6em 0 .6em 0;
+}
+
+p, ul, ol, article {
+/*  max-width: 60ch; /* Limit line-length to 60 characters */*/
+  margin-bottom: .6em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li::marker {
+  content: "\2022   ";
+}
+
+li {
+  margin-bottom: .2em;
+}
+
+ul, ol {
+  padding-left: 2ch;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+small {
+  font-size: .85em;
+}
+
+hr {
+  height: 2px;
+  border: 0;
+  background: brown;
+  margin: 1.2em 0;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+abbr[title]:hover {
+  opacity: .7;
+  cursor: help;
+}
+
+blockquote {
+  padding-left: 2ch;
+  opacity: .7;
+  margin-bottom: .6em;
+  position: relative;
+}
+
+blockquote:before {
+  content: "";
+  position:absolute;
+  left: 0;
+  top: .3em;
+  bottom: .3em;
+  background: currentColor;
+  width: 1px;
+  opacity: .2;
+}
+
+img, svg, video, audio {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  fill: currentColor;
+}
+
+code, textarea {
+  font-family: ui-monospace, SF Mono, Menlo, Monaco, Andale Mono, monospace;
+  font-size: 1em;
+  opacity: .7;
+}
+
+a code {
+  opacity:1;
+}
+
+pre, textarea { /* for code samples */
+  font-size: .9em;
+  color: inherit;
+  line-height:inherit;
+  padding:.6em .9em;
+  margin: .8em 0 1em 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  white-space: pre;
+  border:0;
+  border-radius: 4px;
+  background:rgba(255,255,100,.075);
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.2), inset -1px -1px 0 rgba(0,0,0,.04) ;
+}
+
+/* Inline footnotes */
+
+label {
+  cursor: pointer;
+  vertical-align: super;
+  line-height: 1;
+  font-size: .75em;
+  padding-left: .1em;
+}
+
+label:hover {
+  color: var(--highlight);
+}
+
+label:before {content:"[";}
+label:after {content:"]";}
+
+label + input,
+label + input + small {
+  display: none;
+}
+
+input:checked + small {
+  display: block;
+  padding: .8em 0 1em 2.5vw;;
+}
+
+/* Figures */
+
+figure {
+  margin: 2em 0 1.5em 0;
+}
+
+figure figcaption {
+  margin: 0.8em 0 0 0;
+  font-size: .85em;
+  opacity: .7;
+}
+
+/* Responsive video embeds */
+
+figure.video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+figure.video iframe, figure.video object, figure.video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  visibility: hidden; /* so loading="lazy" should work? */
+}
+
+section:target iframe {
+  visibility: visible;
+}
+
+/* External links */
+
+a[href*="//"]:after {
+  font-weight: 300;
+  font-size: .85em;
+/*  content: "\2197"; /* top right arrow: â†— */*/
+  color: var(--textcolor);
+  opacity: .25;
+}
+
+a[href*="//"]:hover:after {
+  color: var(--highlight);
+  opacity: 1;
+}
+
+/* File links */
+
+a:before {
+  font-size: .7em;
+  margin-right: .4em;
+}
+
+/* Add more filetypes here if you want */
+
+a[href$=".pdf"]:before { content: "PDF"; }
+a[href$=".txt"]:before { content: "TXT"; }
+a[href$=".mp3"]:before { content: "MP3"; }
+a[href$=".zip"]:before { content: "ZIP"; }
+a[href$=".rar"]:before { content: "RAR"; }
+a[href$=".jpeg"]:before,
+a[href$=".jpg"]:before,
+a[href$=".gif"]:before,
+a[href$=".png"]:before { content: "IMG"; }
+
+/* ------- News ------- */
+
+article + article {
+  margin-top: 4.5em;
+}
+
+article h2 {
+  font-weight: 700;
+  margin: 0 0 1em 0;
+}
+
+article time {
+  margin-left: .6em;
+  font-size: .8em;
+  font-weight: 400;
+  opacity: .7;
+}
+
+/* ------- Images Grid ------- */
+
+.grid {
+  display: grid;
+  grid-gap: 5vmin;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 150px = minimum image size */
+  grid-auto-flow: dense;
+  padding: 2em 0;
+}
+
+.grid a {
+  position: relative;
+  border: 0;
+}
+
+.grid a:hover {
+  transform: scale(.975);
+}
+
+/* For a square ratio */
+.grid a:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.grid a img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ------- Slideshow ------- */
+
+.slides {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.slides figure {
+  height: 100vh;
+  padding: 0 5vw;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  scroll-snap-align: center;
+}
+
+.slides figure img {
+  max-height: 88vh; /* Adjust if needed */
+}
+
+.slides figure.cover {
+  padding: 0;
+}
+
+.slides figure.cover img {
+  max-height: none;
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* ------- Lightbox ------- */
+
+.lightbox {
+  display: none;
+  color: var(--textcolor);
+}
+
+.lightbox:target {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  background: var(--bgcolor);
+  border: 0;
+  z-index: 3;
+}
+
+.lightbox img {
+  max-height: 100vh;
+  z-index: 4;
+}
+
+.lightbox:target:before { /* Loading spinner */
+  content:"";
+  height: 2em;
+  width: 2em;
+  animation: spin .8s infinite linear;
+  border: 1px solid;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  transform: translateX(-50%);
+  opacity: .25;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.lightbox:target:after { /* Ã— to close */
+  content: "\00D7";
+  position: fixed;
+  font-size: 2em;
+  font-weight: 200;
+  line-height: 0;
+  top: .75em;
+  right: .5em;
+  z-index: 4;
+}
+
+/* ------- Smaller screens ------- */
+
+@media only screen and (max-width: 680px) {
+  body { font-size: 16px; }
+}
+
+@media only screen and (max-width: 540px) {
+  nav { width: 100%; } /* Fix for older webkit versions */
+}
+
+/* ------- Print ------- */
+
+@media print {
+
+  nav, .lightbox:target:after { display: none; }
+
+  article, figure, img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Inline footnotes */
+
+  label + input + small { display: inline; }
+  label + input + small:before { content: "["; }
+  label + input + small:after { content: "]"; }
+
+  /* Slides */
+
+  .slides, .slides figure {
+    position: relative;
+    height: auto;
+    padding: 0;
+  }
+
+  .slides figure img, .slides figure.cover img {
+    max-height: auto;
+    position: relative;
+    z-index: 1;
+    width: auto;
+    height: 100vh;
+    object-fit: contain;
+  }
+
+}
+
+</style>
+  </head>
+    <body>
+
+    <header>
+		<h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#preferences">Preferences</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#bookmarks">Bookmarks</a>
+        <a href="#articles">Articles</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+      		</h1>
+    </header>
+
+    <main>
+
+
+
+
+
+
+
+	    <section id="home"> <!-- HOME -->
+	    <hr>
+	    <br>
+
+	    <p><strong>राम राम, </strong>Here I will try to express my thoughts that i would not in real  life.   </p>
+
+
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+      <section id="preferences"> <!-- ABOUT -->
+      <hr>
+      <br>
+
+           <p>Trying this new <a href="#new-page">page</a> if it works.</p>
+	<p>Movies</p>
+	<p>Books</p>
+	<p>Shows</p>
+	<p>Music</p>
+	<p>Poems</p>
+	<a href="#jokes">Jokes</a>
+	<p>Quotes</p>
+	<p>Persons</p>
+
+        <figure>
+          <a href="#img-about">
+            <img loading="lazy" alt="" src="//dummyimage.com/1200x600/ddd/bbb" width="1200" height="600">
+          </a>
+          <figcaption>Example of an image with a link to a larger version.</figcaption>
+        </figure>
+
+      </section>
+
+
+
+
+	<section id="new-page"> <!-- ANOTHER PAGE -->
+        <hr>
+        	<p>Now it works</p>
+		<br>
+        <p><a href="#preferences">← Go back</a></p>
+        </section>
+
+	<section id="jokes"> <!-- ANOTHER PAGE -->
+        <hr>
+	<ul><a href="#cool-jokes">Cool Jokes</a></ul>
+	<ul><a href="#uncool-jokes">Uncool Jokes</a></ul>
+	<br>
+        <p><a href="#preferences">← Go back</a></p>
+        </section>
+
+	<section id="cool-jokes"> <!-- ANOTHER PAGE -->
+	<hr>
+
+	<p>1. After the funeral, when everyone went home,<span class="spoiler"> I came back with a shovel.</span></p>
+	<br>
+        <p><a href="#jokes">← Go back</a></p>
+        </section>
+
+	<section id="uncool-jokes"> <!-- ANOTHER PAGE -->
+        <hr>
+		<p>Imagine I wake up in the middle of the night, all terrified and my parents are like, "Ruk ja beta, camera to on kar lene de" </p>
+	<br>
+        <p><a href="#jokes">← Go back</a></p>
+        </section>
+
+
+
+      <section id="blogs"> <!-- NEWS -->
+	      <hr>
+	      <br>
+	    <ul>
+		    <li><a href="#Some-Internet-manners-that-I-learned-lately">Some Internet manners that I learned lately</a></li>
+		    <li><a href="#Is-globalisation-really-necessary?">Is globalisation really necessary?</a></li>
+		    <li><a href="#How-long-does-it-take-to-change-opinion-of-people?">How long does it take to change opinion of people?</a></li>
+		    <li><a href="#Why-do-we-feel-good-when-a-big-man-falls.">Why do we feel good when a big man falls.</a></li>
+		    <li><a href="#Some-stories-of-Indian-Police">Some stories of Indian Police</a></li>
+		    <li><a href="#Stalking-in-medieval-India">Stalking in medieval India</a></li>
+		    <li><a href="#Views-of-some-Scholars-and-some-Laymans-on-Insanity">Views of some Scholars and some Laymans on Insanity</a></li>
+		    <li><a href="#Should-you-keep-following-what-supports-your-ideology?">Should you keep following what supports your ideology?</a></li>
+		    <li><a href="#Impacts-of-Reviews">Impacts of Reviews</a></li>
+		    <li><a href="#How to-be-a-modern-Atheist">How to be a modern Atheist</a></li>
+		    <li><a href="#ptsd">PTSD</a></li>
+
+	    </ul>
+
+
+        <article>
+          <h2>Blogging with Joe Bloggs <time datetime="2020-10-10">10.10.2020</time></h2>
+          <p> One <em>could</em> use this setup to write <s>a blog</s> short updates. For images make sure to use the <code>loading="lazy"</code> attribute, so they get loaded only when needed.<label for="lazy">1</label><input type="checkbox" id="lazy"><small>
+
+            You might be able to use it for <code>iframe</code> embeds too(?), but maybe just write a link to the Youtube video instead.
+
+           </small></p>
+        </article>
+
+        <article>
+          <h2><a href="https://example.com">Why Your Cat Bites You</a> <time datetime="2004-12-12">12.12.2004</time></h2>
+          <p>Honestly you don't want to know.</p>
+        </article>
+
+      </section>
+
+	<section id="Some-Internet-manners-that-I-learned-lately">
+	<hr>
+
+        	<p>How to ask questions:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="Is-globalisation-really-necessary?">
+	<hr>
+
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="How-long-does-it-take-to-change-opinion-of-people?">
+        <hr>
+        	<p>O:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="Why-do-we-feel-good-when-a-big-man-falls.">
+        <hr>
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="Some-stories-of-Indian-Police">
+		<hr>
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="Stalking-in-medieval-India">
+		<hr>
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="Views-of-some-Scholars-and-some-Laymans-on-Insanity">
+		<hr>
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="Should-you-keep-following-what-supports-your-ideology?">
+		<hr>
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="Impacts-of-Reviews">
+        <hr>
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="How to-be-a-modern-Atheist">
+        <hr>
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+	<section id="ptsd">
+        <hr>
+        	<p>Let's find out:</p>
+	<br>
+        <p><a href="#blogs">← Go back</a></p>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section id="bookmarks"> <!-- PHOTOS -->
+   <hr>
+   <br>
+
+	<h1>Here are some of my favorite Bookmarks:</h1>
+
+        <p>Bookmarks</p>
+
+        <!-- You can use this grid of images in any page -->
+
+        <div class="grid">
+          <a href="#img-01"><img loading="lazy" alt="" src="//dummyimage.com/300x300/ddd/bbb"></a>
+          <a href="#img-02"><img loading="lazy" alt="" src="//dummyimage.com/400x300/ddd/bbb"></a>
+          <a href="#img-03"><img loading="lazy" alt="" src="//dummyimage.com/300x400/ddd/bbb"></a>
+          <a href="#img-04"><img loading="lazy" alt="" src="//dummyimage.com/300x300/ddd/bbb"></a>
+        </div>
+
+      </section>
+
+
+
+
+
+
+
+
+      <section id="articles"> <!-- PORTFOLIO -->
+   <hr>
+   <br>
+
+
+
+
+
+	<p>Some Interesting Articles that I liked:</p>
+	<ul><a href="https://en.wikipedia.org/wiki/Notes_on_Nationalism"target="_blank">Notes on Nationalism</a></ul>
+	<ul><a href="https://www.marxists.org/bookmarks/bhagat-singh/index.htm"target="_blank">Notes of Bhagat Singh</a></ul>
+	<ul><a href="https://rgu.ac.in/wp-content/uploads/2021/02/Download_611.pdf"target="_blank">Short Notes on Western Political Thinkers</a></ul>
+	<ul><a href="#who-supported-hitler">Who Supported Hitler</a></ul>
+	<ul><a href="https://en.wikipedia.org/wiki/1945_United_Kingdom_general_election"target="_blank">Why did Churchill lose election even after winning the War?</a></ul>
+	<ul><a href="https://bea-bd.org/site/images/pdf/078.pdf"target="_blank">Prospects and Challenges of Industrialization in Bangladesh</a></ul>
+	<ul><a href="https://dergipark.org.tr/tr/download/article-file/19517"target="_blank">“The New World Order”: An Outline of the Post-Cold War Era</a></ul>
+	<ul><a href="https://en.wikipedia.org/wiki/Kitchen_Cabinet"target="_blank">Kitchen Cabinet</a></ul>
+	<ul><a href="https://en.wikipedia.org/wiki/Central_Treaty_Organization"target="_blank">Baghdad Pact</a></ul>
+	<ul><a href="https://en.wikipedia.org/wiki/Chapati_Movement"target="_blank">Chapati Movement</a></ul>
+	<ul><a href="https://en.wikipedia.org/wiki/Congreve_rocket"target="_blank">Congreve Rockets</a></ul>
+	<ul><a href="https://www.barandbench.com/columns/when-a-prime-minister-of-pakistan-was-litigating-to-be-declared-an-indian-zulfiqar-ali-bhutto"target="_blank">When a Prime Minister of Pakistan was litigating to be declared an Indian</a></ul>
+	<ul><a href="https://asiatimes.com/2021/07/how-china-exports-repression-via-a-network-of-spies/"target="_blank">How China exports repression via a network of spies </a></ul>
+	<ul><a href="https://www.nipfp.org.in/media/medialibrary/2020/09/WP_318_2020.pdf"target="_blank">Reverse Migration during Lockdown</a></ul>
+	<ul><a href="https://sive.rs/local"target="_blank">You don't have to be Local</a></ul>
+	<ul><a href="https://en.wikipedia.org/wiki/Online_disinhibition_effect"target="_blank">Online disinhibition effect</a></ul>
+	<ul><a href="https://mgsloan.com/posts/supine-computing/"target="_blank">The Most Interesting Prime Minister of India: V.P Singh</a></ul>
+	<ul><a href="https://www.historydiscussion.net/biography/biography-of-ghiyas-ud-din-balban/3040"target="_blank">Balban</a></ul>
+	<ul><a href="https://www.historydiscussion.net/history-of-india/tughluq-dynasty/biography-of-muhammad-bin-tughluq-tughluq-dynasty-indian-history/6578"target="_blank">Muhammad Bin Tughluq</a></ul>
+	<ul><a href="https://ijsdr.org/papers/IJSDR1705034.pdf"target="_blank">Socio Cultural impact of Mughal rule on Kashmir</a></ul>
+	<ul><a href="https://ssd.eff.org/en/module/attending-protest"target="_blank">Attending a Protest</a></ul>
+	<ul><a href="https://www.bellingcat.com/resources/2022/08/12/these-are-the-tools-open-source-researchers-say-they-need/"target="_blank"> These are the Tools Open Source Researchers Say They Need </a></ul>
+	<ul><a href="https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/"target="_blank">Now that's what i call a Hacker</a></ul>
+	<ul><a href="https://www.vice.com/amp/en/article/pkgbwm/chinese-woman-fake-russian-history-wikipedia"target="_blank">A Bored Chinese woman fake Russian History on Wikipedia</a></ul>
+	<ul><a href="https://www.philosophybro.com/bookmarks/platos-apology-a-summary"target="_blank">Plato's Apology: A Summary</a></ul>
+	<ul><a href="https://www.philosophybro.com/bookmarks/platos-crito-a-summary"target="_blank">Plato's Crito: A Summary</a></ul>
+	<ul><a href="https://indianexpress.com/article/opinion/columns/shiv-sena-thackeray-maharashtra-political-crisis-7994281/"target="_blank">Julio Ribeiro writes: Shiv Sena without a Thackeray at the helm will not be the same</a></ul>
+	<ul><a href="https://www.marxists.org/bookmarks/guevara/1952/motorcycle-diaries/index.htm"target="_blank">Motorcycle Diaries</a></ul>
+	<ul><a href="https://www.marxists.org/bookmarks/tagore/1940/roy-aids-imp.htm"target="_blank">M. N. Roy Comes to the Aid of British Imperialism</a></ul>
+	<ul><a href="https://www.marxists.org/bookmarks/gramsci/1921/01/ape-people.htm"target="_blank">The ape people</a></ul>
+	<ul><a href="https://www.marxists.org/bookmarks/gramsci/1936/letter-giuliano.htm"target="_blank">Letter from Prison to his Son, Giuliano</a></ul>
+	<ul><a href="https://www.marxists.org/bookmarks/tagore/1966/rajarammohunroy.pdf"target="_blank">Raja Rammohan Roy</a></ul>
+	<ul><a href="https://www.marxists.org/bookmarks/tagore/1940/trotsky-is-dead.htm"target="_blank">Trotsky is Dead</a></ul>
+	<ul><a href="https://globeatwar.com/article/geography-stalingrad-august-1942"target="_blank">The Geography of Stalingrad: August 1942</a></ul>
+	<ul><a href="m"target="_blank"></a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+	<ul><a href="m"target="_blank">d</a></ul>
+
+
+       </section>
+
+
+
+	<section id="who-supported-hitler"> <!-- ANOTHER PAGE -->
+	<hr>
+
+
+	<p>The industrialists (big business guys) sided with Hitler because they were scared of communism (which would destroy their businesses). The Christian churches also sided with Hitler because communism was a common enemy. The poor and unemployed approved of Hitler because he created policies that gave them food and other basic necessities in a dire time (the depression).</p>
+	<p>Youth who were brought up in the Hitler youth (propaganda) were fanatical. They were empowered by the Nazi State and repressed those who were less than absolutely supportive of fascism. Many older people (above school age) were a little ore critical of the Nazi state, but of course you had to be quiet about this. </p>
+	<p>Many Germans were very bitter about the Treaty of Versailles, so Hitler was was also a good channel for that anger. Some people were supportive of Hitler's desire to promote Germany until the war became reality. </p>
+	<p>-from Reddit</p>
+	<br>
+        <p><a href="#articles">← Go back</a></p>
+        </section>
+
+
+
+
+
+       <section id="contacts">
+       <hr>
+       <br>
+
+		<h1>You can connect with me here:</h1>
+		<p><strong>Email:</strong><a href="mailto:jumpherkai@protonmail.com"target="_blank">  jumpherkai@protonmail.com</a></p>
+		<p><strong>IRC:</strong>  ramram@libera.chat</p>
+		<p><strong>Telegram:</strong><a href="https://telegram.me/aramharam"target="_blank">  @aramharam</a></p>
+		<p><strong>Youtube:</strong><a href="https://www.youtube.com/channel/UCttM7sYLW1ML91tEwugtwXA"target="_blank">  @Morundo Hu</a></p>
+		<p><strong>Github:</strong><a href="https://github.com/aramharam"target="_blank"> @aramharam</a></p>
+
+		<br>
+		<p>
+
+       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+  </body>
+</html>
