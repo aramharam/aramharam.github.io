@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>&#128068; Ramram</title>
 
@@ -11,6 +12,69 @@
     <meta property="og:image" content="&#128068;">
 
 <style>
+
+.new {
+	float: left;
+	padding-top: 2px;
+  	border: none;
+}
+
+.green-next {
+	float: left;
+	padding-top:1px;
+  /*-webkit-transform: scaleX(-1);
+  transform: scaleX(-1);*/
+	border: none;
+}
+
+.stars {
+	padding-left: 27px;
+}
+
+.checked {
+  color: orange;
+}
+
+.dropbtn {
+  background-color: #017354;
+  color: #eadab1;
+  padding: 2px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #017354;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #017354;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 2px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #eadab1;}
+
+.show {display: block;}
+
 * { margin: 0; padding: 0; box-sizing: border-box;
 
   /* Color scheme */
@@ -129,6 +193,7 @@ section h1 {
 }
 
 h2, h3, h4 {
+  color: brown;
   font-size: 1em;
   font-weight: 600;
   margin: 1.6em 0 .6em 0;
@@ -143,7 +208,7 @@ h5 {
 
 
 h6 {
-  color: purple;
+  color: brown;
   font-size: 1em;
   font-weight: 1em;
   margin: 1.6em 0 .6em 0;
@@ -543,6 +608,30 @@ article time {
   </head>
     <body>
 
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+
     <header>
       <nav>
         <a href="#home">Home</a>
@@ -562,9 +651,19 @@ article time {
 
 
 
+
+
+
+
+
 	    <section id="home"> <!-- HOME -->
 		    <hr>
-	    <p><strong>राम राम, </strong>Here I will try to express my thoughts that i would not in real  life.   </p>
+		    <p><strong>राम राम, </strong>I'm   Ram, a firm votary of <a href="gnu.org">GNU/LINUX</a> from the deserts of Rajasthan. This is my website on the Internet and here  I will try to express my thoughts freely and lucidly.   </p>
+	    <br>
+	    <p> A little preface to my <a href="#blogs">blogs</a> and on my selection of <a href="#articles">articles</a> that I think would be good for a new visitor. There can be some misrepresentations of facts, stories, folklores, and data but I promise I will try to write my sources wherever it's necessary. I'm doing this to improve my writing skills and organize all of my notes in one place. </p>
+	    <p>Mostly my rambling will wander around Politics, Philosophy, and Medieval Indian history characters. I'm also thinking about writing a diary for a long time, let's see if I stay motivated.</p>
+	    <p>Over the course of the last 3 years, I have come across some cool websites which can be useful to you.  You can check them out in the <a href="#bookmarks">bookmarks</a> section.</p>
+	    <p>Now, I'm also maintaining a list of the media that I'm consooming in the <a href="#preferences">preferences</a> section. If you have any suggestions or recommendations for me, you can message me over <a href="#contacts">here</a>.
 
 
 
@@ -586,16 +685,27 @@ article time {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
       <section id="preferences"> <!-- Preferences -->
 	      <hr>
-	<a href="#movies">Movies</a>
-	<p>Books</p>
-	<p>Shows</p>
-	<p>Music</p>
-	<p>Poems</p>
-	<a href="#jokes">Jokes</a>
-	<p>Quotes</p>
-	<p>Persons</p>
+	<a href="#movies">Movies</a><br>
+	<a href="#books">Books</a><br>
+	<a href="#shows">Shows</a><br>
+	<a href="#music">Music</a><br>
+	<a href="#poems">Poems</a><br>
+	<a href="#jokes">Jokes</a><br>
+	<a href="#quotes">Quotes</a>
 
   <!--      <figure>
           <a href="#img-about">
@@ -616,6 +726,19 @@ article time {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--	<section id="new-page">  ANOTHER PAGE
 		<hr>
         	<p>Now it works</p>
@@ -626,9 +749,1423 @@ article time {
 
 	<section id="movies"> <!-- ANOTHER PAGE -->
 		<hr>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">&nbspSort&nbsp</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#genre">&nbspGenre</a>
+    <a href="#country">&nbspCountry of Origin</a>
+    <a href="#rating">&nbspMy Rating</a>
+  </div>
+</div>
+
+			<h6>Favorites</h6>
 		<!-- 	<ul><a href="#uncool-jokes">Uncool Jokes</a></ul>-->
+			<details>
+					<summary><span>Truth and Justice <img class="new" loading="lazy"  src="media/new.gif" /></span></summary>
+
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> It is the story of an uncompromising man whose soul is corrupted by the relentless pursuit of his dream.</p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/8/88/TODE_JA_OIGUS_p%C3%B5hiposter.jpg" width="150" height="150" alt="Truth and Justice Poster">
+					<div class=stars>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+				<!--	<span class="fa fa-star"></span>
+				<span class="fa fa-star"></span>-->
+
+					</div>
+
+
+					<br>
+
+
+				</div>
+				</details>
+
+
+				<details>
+					<summary><span>A Sun <img class="green-next" loading="lazy"  src="media/anistar.gif" width="20" height="auto" /></span></summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong>  A family of four fractures under the weight of unmet expectations, unexpected tragedy, and uncompromising pride.</p>
+					<br>
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img class="center" loading="lazy" src="https://upload.wikimedia.org/wikipedia/en/9/9a/A_Sun_2019.jpeg" width="150" height="150"  alt="A sun Poster">
+					<br>
+				</div>
+				</details>
+
 
 			<details>
+				<summary><span>Manchester by the Sea<img class="green-next" loading="lazy"  src="media/anistar.gif" width="20" height="auto" /></span></summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/en/d/de/Manchester_by_the_Sea.jpg" width="150" height="150">
+					<br>
+				</div>
+			</details>
+
+
+
+			<details>
+					<summary>Borg v/s Mccnroe</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+
+
+
+								<details>
+					<summary>There will be blood</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+								</details>
+
+
+
+								<details>
+					<summary><span>Citizen Kane<img class="green-next" loading="lazy"  src="media/anistar.gif" width="20" height="auto" /></summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+								</details>
+
+
+
+								<details>
+					<summary>The assassination of Jesse James by coward Robert Ford</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+								</details>
+
+
+
+								<details>
+					<summary>Bridge of Spies</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+								</details>
+
+
+
+								<details>
+					<summary>Beautiful boy</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+								</details>
+
+
+								<details>
+					<summary>Amadeus</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+								</details>
+
+								<details>
+					<summary>Asuran</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+								</details>
+			<details>
+					<summary>Ayyappanum Koshiyum</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Tummbad</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Angamaly Diaries</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Kumbalangi Nights</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Premam</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Pariyeum Perumal</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Grave (Raw)</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>A Prophet</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Aamis </summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The lobster</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The Killing of a sacred deer</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Incendies</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Mommy</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Tom at the farm</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>I killed my Mother</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The lives of Others</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The Hunt </summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Another Round</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>La Haine</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The Seventh Seal</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Stalker</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Mirror</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>City of God</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The Secret in their Eyes</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Rush</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The Handmaiden</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Rashomon</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>High and Low</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Seven Samurais</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The Bad sleep Well</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Ikiru</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Burning</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Peppermint Candy</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Oasis</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Poetry</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Secret Sunshine</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Thirst</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>I saw the Devil </summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Forgotten </summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>The wailing</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Spring Summer Fall Winter and Spring</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>A Mother</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Memories of Murder</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Memoirs of Murderer</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Confession of Murder</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Meel Patther (Milestone)</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Paan Singh Tomar</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Milkha Singh</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Call me by your name</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Close Up</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Munich</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+	<br>
+	<h6>Recently Watched</h6>
+	<ul>
+		<li>1922 (2017)</li>
+		<li>24 Frames</li>
+		<!--<span id="dots"></span><span id="more">-->
+		<li>45 Years</li>
+		<li>A Hidden Life</li>
+		<li>A Speration</li>
+		<li>Apples (2020)</li>
+		<li>Being There (1979)</li>
+		<li>Birds are singing in Kigali</li>
+		<li>Decision To leave</li>
+		<li>Department Q A conspiracy of Faith</li>
+		<li>Dersu Uzala</li>
+		<li>Eeb Allay Ooo</li>
+		<li>El Dorado (1967)</li>
+		<li>Enter the Void</li>
+		<li>Fresh (2022)</li>
+		<li>Garuda Gamana Vrishabha Vahana</li>
+		<li>High Noon (1952)</li>
+		<li>Hoffa (1992)</li>
+		<li>It's Such a Beautiful Day</li>
+		<li>Joji</li>
+		<li>Lone Wolf and Cub Sword of Vengeance</li>
+		<li>Love in the Afternoon (1957)</li>
+		<li>Mongol: The Rise of Gendhis Khan (2007)</li>
+		<li>Munich: The Edge of War</li>
+		<li>My Dinner with Andre</li>
+		<li>Rebecca (1940)</li>
+		<li>Rio Bravo (1959)</li>
+		<li>Sansho The Bailiff</li>
+		<li>Sergeant York (1941)</li>
+		<li>The Baker's Wife (1938)</li>
+		<li>The Disciple</li>
+		<li>The Eternal Road</li>
+		<li>The Hand of God</li>
+		<li>The Last Note</li>
+		<li>The Life and Death of Colonel Blimp</li>
+		<li>The Public Enemy</li>
+		<li>The Searchers</li>
+		<li>The Tree of Life</li>
+		<li>The Turin Horse</li>
+		<li>The Westerner (1940)</li>
+		<li>Thirst (2009)</li>
+		<li>Trees Lounge (1996)</li>
+		<li>Waking Life (2001)</li>
+		<li>Wild (2014)</li>
+		<li>Young Adam</li>
+	</ul>
+<!--</span>
+<button style="background-color:#017354; color:#eadab1; border-color:#eadab1;" onclick="myFunction()" id="myBtn">&nbspRead more&nbsp</button>
+<script>
+function myFunction() {
+var dots = document.getElementById("dots");
+var moreText = document.getElementById("more");
+var btnText = document.getElementById("myBtn");
+if (dots.style.display === "none") {
+dots.style.display = "inline";
+btnText.innerHTML = "Read more";
+moreText.style.display = "none";
+} else {
+dots.style.display = "none";
+btnText.innerHTML = "&nbspRead less&nbsp";
+moreText.style.display = "inline";
+}
+}
+</script>-->
+
+
+	<br>
+	<h6>Watch Later</h6>
+		<ul>
+			<li>Utama</li>
+			<li>Dosti 1963</li>
+			<li>Paka</li>
+			<li>Paar 1984</li>
+			<li>Ek Doctor ki Maut</li>
+			<li>Giri (Haji)</li>
+			<li>Empires of the Sun</li>
+			<li>As good as it gets</li>
+			<li>The man from earth</li>
+		</ul>
+
+
+
+
+	<br>
+        <p><a href="#preferences">← Go back</a></p>
+
+
+			    <hr>
+		    <div class=gli>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
+<a href="https://gnulinuxindia.org/members.html/">GLI</a>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
+		    </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section id="genre">
+	      		<hr>
+        	<p>Horror</p>
+		<br>
+        	<p>Drama</p>
+					<details>
 					<summary>Truth and Justice</summary>
 				<div class="details-content">
 					<br>
@@ -650,94 +2187,326 @@ article time {
 
 				</div>
 				</details>
+		<br>
+        	<p>Comedy</p>
+		<br>
+        	<p>Action</p>
+		<br>
+        	<p>Thriller</p>
+		<br>
+        	<p>Western</p>
+		<br>
+        	<p>Indie</p>
+		<br>
+        <p><a href="#movies">← Go back</a></p>
 
-
-				<details>
-					<summary>A sun</summary>
-				<div class="details-content">
-					<p><strong>Plot: </strong>  A family of four fractures under the weight of unmet expectations, unexpected tragedy, and uncompromising pride.</p>
-					<img class="center" loading="lazy" src="https://upload.wikimedia.org/wikipedia/en/9/9a/A_Sun_2019.jpeg" width="150" height="150"  alt="A sun Poster">
-				</div>
-				</details>
-
-
-			<li>Manchester by the Sea</li>
-			<li>Borg v/s Mccnroe</li>
-			<li>There will be blood</li>
-			<li>Citizen Kane</li>
-			<li>The assassination of Jesse James by coward Robert Ford</li>
-			<li>Bridge of Spies</li>
-			<li>Beautiful Boy</li>
-			<li>Amadeus</li>
-			<li>Asuran</li>
-			<li>Ayyappanum Koshiyum</li>
-			<li>Tummbad</li>
-			<li>Angamaly Diaries</li>
-			<li>Kumbalangi Nights</li>
-			<li>Premam</li>
-			<li>Pariyerum Perumal</li>
-			<li>Grave (Raw)</li>
-			<li>A Prophet</li>
-			<li>Aamis</li>
-			<li>The Lobster</li>
-			<li>The Killing of a sacred Deer</li>
-			<li>Incendies</li>
-			<li>Mommy</li>
-			<li>Tom at the Farm</li>
-			<li>I killed My mother</li>
-			<li>The Lives of others</li>
-			<li>The Hunt</li>
-			<li>Another Round</li>
-			<li>La Haine</li>
-			<li>The Seventh Seal</li>
-			<li>Stalker</li>
-			<li>Mirror</li>
-			<li>City of God</li>
-			<li>The secret in their Eyes</li>
-			<li>Rush</li>
-			<li>The Handmaiden</li>
-			<li>Rashomon</li>
-			<li>High and Low</li>
-			<li>Seven Samurais</li>
-			<li>The Bad sleep well</li>
-			<li>Ikiru</li>
-			<li>Burning</li>
-			<li>Peppermint Candy</li>
-			<li>Oasis</li>
-			<li>Poetry</li>
-			<li>Secret Sunshine</li>
-			<li>Thirst</li>
-			<li>I saw the Devil</li>
-			<li>Forgotten</li>
-			<li>The wailing</li>
-			<li>Spring Summer Fall Winter and Spring</li>
-			<li>A mother</li>
-			<li>Memories of Murder</li>
-			<li>Memoirs of Murderer</li>
-			<li>Confession of Murder</li>
-			<li>Meel Pather (MileStone)</li>
-			<li>Paan Singh Tomar</li>
-			<li>Milka Singh</li>
-			<li>Call me by your name</li>
-			<li>Close-Up</li>
-			<li>Munich</li>
-		</ul>
-
-
-
-
-
-	<br>
-        <p><a href="#preferences">← Go back</a></p>
-
-			    <hr>
+				    <hr>
 		    <div class=gli>
 <a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
 <a href="https://gnulinuxindia.org/members.html/">GLI</a>
 <a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
 		    </div>
 
-        </section>
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section id="country">
+	      		<hr>
+        	<p>Sort by Country of Origin</p>
+		<br>
+        <p><a href="#movies">← Go back</a></p>
+
+				    <hr>
+		    <div class=gli>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
+<a href="https://gnulinuxindia.org/members.html/">GLI</a>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
+		    </div>
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section id="rating">
+	      		<hr>
+        	<p>Sort by My Ratings</p>
+		<br>
+        <p><a href="#movies">← Go back</a></p>
+
+				    <hr>
+		    <div class=gli>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
+<a href="https://gnulinuxindia.org/members.html/">GLI</a>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
+		    </div>
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="books">
+		<hr>
+        	<p>Now it works</p>
+		<br>
+        <p><a href="#preferences">← Go back</a></p>
+
+				    <hr>
+		    <div class=gli>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
+<a href="https://gnulinuxindia.org/members.html/">GLI</a>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
+		    </div>
+
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="shows">
+		<hr>
+        	<p>Now it works</p>
+		<br>
+        <p><a href="#preferences">← Go back</a></p>
+
+				    <hr>
+		    <div class=gli>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
+<a href="https://gnulinuxindia.org/members.html/">GLI</a>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
+		    </div>
+
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<section id="music">
+		<hr>
+        	<p>Now it works</p>
+		<br>
+        <p><a href="#preferences">← Go back</a></p>
+
+				    <hr>
+		    <div class=gli>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
+<a href="https://gnulinuxindia.org/members.html/">GLI</a>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
+		    </div>
+
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<section id="poems">
+		<hr>
+        	<p>Now it works</p>
+		<br>
+        <p><a href="#preferences">← Go back</a></p>
+
+				    <hr>
+		    <div class=gli>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
+<a href="https://gnulinuxindia.org/members.html/">GLI</a>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
+		    </div>
+
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<section id="quotes">
+		<hr>
+        	<p>Now it works</p>
+		<br>
+        <p><a href="#preferences">← Go back</a></p>
+
+				    <hr>
+		    <div class=gli>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=prev">↩ </a>
+<a href="https://gnulinuxindia.org/members.html/">GLI</a>
+<a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
+		    </div>
+
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -781,8 +2550,13 @@ article time {
 
 	<section id="uncool-jokes"> <!-- ANOTHER PAGE -->
 		<hr>
-		<p>Imagine I wake up in the middle of the night, all terrified and my parents are like, "Ruk ja beta, camera to on kar lene de" </p>
+		<p>1.Imagine I wake up in the middle of the night, all terrified and my parents are like, "Ruk ja beta, camera to on kar lene de" </p>
 		<br>
+		<p>2.Balli: Mere daada ne kabhi kisi ko Thank you nahi bola.   </p>
+		<p>  Kaaju: Kyu?</p>
+		<p>  Balli: <span class="spoiler"> Kyoki unko English nahi aati thi.</span></p>
+		<br>
+
         <p><a href="#jokes">← Go back</a></p>
 
 			    <hr>
@@ -793,6 +2567,19 @@ article time {
 		    </div>
 
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -847,6 +2634,17 @@ article time {
 		    </div>
 
       </section>
+
+
+
+
+
+
+
+
+
+
+
 
 	<section id="Some-Internet-manners-that-I-learned-lately">
 		<hr>
@@ -939,6 +2737,15 @@ article time {
 
 
 
+
+
+
+
+
+
+
+
+
       <section id="bookmarks"> <!-- Bookmarks -->
 	      <hr>
         <h1>Bookmarks</h1>
@@ -960,6 +2767,21 @@ article time {
 <a href="https://gnulinuxindia.org/direct.html?name=yourname&dir=next"> ↪</a>
 		    </div>
             </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1019,12 +2841,23 @@ article time {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 	<section id="who-supported-hitler"> <!-- ANOTHER PAGE -->
 		<hr>
-	<p>The industrialists (big business guys) sided with Hitler because they were scared of communism (which would destroy their businesses). The Christian churches also sided with Hitler because communism was a common enemy. The poor and unemployed approved of Hitler because he created policies that gave them food and other basic necessities in a dire time (the depression).</p>
-	<p>Youth who were brought up in the Hitler youth (propaganda) were fanatical. They were empowered by the Nazi State and repressed those who were less than absolutely supportive of fascism. Many older people (above school age) were a little ore critical of the Nazi state, but of course you had to be quiet about this. </p>
-	<p>Many Germans were very bitter about the Treaty of Versailles, so Hitler was was also a good channel for that anger. Some people were supportive of Hitler's desire to promote Germany until the war became reality. </p>
-	<p>-from Reddit</p>
+		<p>The Industrialists (big business guys) sided with Hitler because they were scared of communism (which would destroy their businesses).</p><p> The Christian churches also sided with Hitler because communism was a common enemy.</p></p> The poor and unemployed approved of Hitler because he created policies that gave them food and other basic necessities in a dire time (the depression).</p>
+		<p>Youth who were brought up in the Hitler youth (propaganda) were fanatical. They were empowered by the Nazi State and repressed those who were less than absolutely supportive of fascism.</p><p> Many older people (above school age) were a little ore critical of the Nazi state, but of course you had to be quiet about this.</p>
+		<p>Many Germans were very bitter about the Treaty of Versailles, so Hitler was was also a good channel for that anger. </p><p>Some people were supportive of Hitler's desire to promote Germany until the war became reality. </p>
+	<p>- From Reddit</p>
 
 	<br>
         <p><a href="#articles">← Go back</a></p>
@@ -1037,6 +2870,23 @@ article time {
 		    </div>
 
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
