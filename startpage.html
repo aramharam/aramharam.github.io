@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>>_~</title>
+<style>
+:root {
+    --color-bg: #006666;
+    --color-fg: #f9bc2f;
+    --color-link: #EADBB2;
+    --color-link-visited: #668F8B;
+    --color-link-hover: #f9bc2f ;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: "Fira Code";
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.bookmarks {
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+li {
+  font-size: 16px;
+  list-style-type: none;
+  padding: 5px
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+
+
+
+
+
+
+
+/**
+ * Searchbar
+ **/
+
+#searchbar {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+#searchbar > button {
+  width: calc(var(--space-medium) * 2);
+  height: calc(var(--space-medium) * 2);
+  color: var(--color-primary-fg);
+
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchbar > button > .feather-search {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+#searchbar > button:hover {
+  color: var(--color-primary-base);
+}
+
+#searchbar > button:focus-visible {
+  color: var(--color-primary-base);
+  background: var(--color-bg-highlight);
+  outline: var(--space-smallest) solid var(--color-fg-shade);
+}
+
+#searchbar > input {
+  height: calc(var(--space-medium) * 2);
+  flex: 1;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: var(--space-smallest) solid var(--color-fg-base);
+}
+
+#searchbar > input:focus-visible {
+  border-color: var(--color-primary-base);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+        <div id="searchbar">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span class="visually-hidden"></span>
+          </button>
+          <input type="text" placeholder="Search" autofocus />
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="bookmarks">
+                <div class="category">
+                    <div class="links">
+                        <li class="title">work</li>
+                        <li><a href="https://gmail.com">gmail</a></li>
+                        <li><a href="https://outlook.office.com">outlook</a></li>
+                        <li><a href="https://linkedin.com">linkedin</a></li>
+                        <li><a href="https://vim.rtorr.com/">vim</a></li>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="links">
+                        <li class="title">dev</li>
+                        <li><a href="https://github.com/">github</a></li>
+                        <li><a href="https://lobste.rs/">lobste.rs</a></li>
+                        <li><a href="https://mankier.com/">mankier</a></li>
+                        <li><a href="https://devdocs.io/">devdocs</a></li>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="links">
+	                <li class="title">temp</li>
+
+
+                        <li><a href="https://reddit.com/r/programming/">programming</a></li>
+                        <li><a href="https://reddit.com/r/selfhosted/">selfhosted</a></li>
+                        <li><a href="https://reddit.com/r/unixporn/">unixporn</a></li>
+                        <li><a href="https://reddit.com/r/mechanicalkeyboards/">mk</a></li>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="links">
+                        <li class="title">play</li>
+                        <li><a href="https://monkeytype.com/">monkeytype</a></li>
+                        <li><a href="https://youtube.com/">youtube</a></li>
+                        <li><a href="https://twitch.tv/">twitch</a></li>
+                        <li><a href="https://netflix.com/">netflix</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
+/**
+ * Search function
+ */
+
+const searchInput = document.querySelector("#searchbar > input");
+const searchButton = document.querySelector("#searchbar > button");
+
+const lookup = {
+  "/": "/",
+  deepl: "https://deepl.com/",
+  reddit: "https://reddit.com/",
+  maps: "https://maps.google.com/",
+};
+const engine = "google";
+const engineUrls = {
+  deepl: "https://www.deepl.com/translator#-/-/",
+  duckduckgo: "https://duckduckgo.com/?q=",
+  ecosia: "https://www.ecosia.org/search?q=",
+  google: "https://www.google.com/search?q=",
+  startpage: "https://www.startpage.com/search?q=",
+  youtube: "https://www.youtube.com/results?q=",
+};
+
+const isWebUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+};
+
+const getTargetUrl = (value) => {
+  if (isWebUrl(value)) return value;
+  if (lookup[value]) return lookup[value];
+  return engineUrls[engine] + value;
+};
+
+const search = () => {
+  const value = searchInput.value;
+  const targetUrl = getTargetUrl(value);
+  window.open(targetUrl, "_self");
+};
+
+searchInput.onkeyup = (event) => event.key === "Enter" && search();
+searchButton.onclick = search;
+</script>
+
+</body>
+
+
+</html>
