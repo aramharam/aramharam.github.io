@@ -12,7 +12,6 @@
     <meta property="og:image" content="&#128068;">
 
 <style>
-
 .new {
 	float: left;
 	padding-top: 2px;
@@ -92,10 +91,12 @@
   }
 }
 
+/*  font-family: system-ui, sans-serif;*/
+
 body {
   font-size: 14px;
   font-weight:600;
-  font-family: system-ui, sans-serif;
+  font-family: rage-italic;
   word-spacing:1px;
   line-height: 1.4;
   color: var(--textcolor);
@@ -198,6 +199,15 @@ h2, h3, h4 {
   margin: 1.6em 0 .6em 0;
 }
 
+
+@font-face {
+  font-family: rage-italic;
+  src:url("/fonts/rage-italic.ttf");
+}
+
+.pricedown{
+	font-family: Pricedown;
+}
 h5 {
   color: brown;
   font-size: 1em;
@@ -631,10 +641,170 @@ window.onclick = function(event) {
 
 
 
+
+
+
+
+
+<script>
+var quotes = [
+	'❝ Stop trying to be liked by everybody. You don\'t even like everybody. ❞',
+	'❝ No man has the right to be an amateur in the matter of physical training. It is a shame for a man to grow old without seeing the beauty and strength of which his body is capable. ❞',
+	'❝ Nobody makes it through life without collecting a few scars on the way out ❞',
+	'❝ Life should not be a journey to the grave with the intention of arriving safely in a pretty and well preserved body, but rather to skid in broadside in a cloud of smoke, thoroughly used up, totally worn out, and loudly proclaiming "Wow! What a Ride ❞',
+	'❝ Aren\'t you tired of being stupid yet? ❞',
+	'❝ If I agreed with you, then we\'d both be wrong ❞',
+	'❝ You\'re not pretty enough to be this stupid ❞',
+	'❝ To be a warrior, first get a keyboard ❞',
+	'❝ You\'re very beautiful for your age ❞',
+	'❝ You\'re smarter than you look ❞',
+'❝ I\'d just like to interject for a moment. What you\'re referring to as Linux, is in fact, GNU/Linux, or as I\'ve recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX  ❞',
+'❝ You can win a war, but you can\'t war a win ❞',
+'❝ Mitochondria is the powerhouse of the cell ❞',
+'❝ You run faster with a knife ❞',
+'❝ A foolish man is lactose intolerant, A wise man simply tolerates it ❞',
+'❝ No full auto in building ❞',
+'❝ You can\'t be racist if there is only one race ❞',
+'❝ Every man beats his meat. But only a few defeat it ❞',
+'❝ A Man who is homeless is a pro camper ❞',
+'❝ Only the weak wipe after using the toilet ❞',
+'❝ I never said anything in English ❞',
+'❝ Sex after marriage is incest because it\'s with family members ❞',
+'❝ Breakfast is not the most important meal of the day ❞',
+'❝ Sleeping is temporary rest, dying is eternal test ❞',
+'❝ No matter how brilliant your tactics are lives will always be lost ❞',
+'❝ You know a book is good when everyone in the comments is quoting different things ❞',
+'❝ When you\'re done building a building call it a building even tho it is already built ❞',
+'❝ Never trust a fart ❞',
+'❝ The floor is made out of floor ❞',
+'❝ Whoever smelt it, dealt it ❞',
+'❝ Socrates: Plato has the biggest dick among my students ❞',
+'❝ Only thing I feel is recoil ❞',
+'❝ Ego Death:If you die before you die, you won\'t die when you die ❞',
+'❝ Never get into a fight with someone with cauliflower ears ❞',
+'❝ Don’t fight an ugly person they have nothing to lose ❞',
+'❝ We\'re all idiots, some just hide it better ❞',
+'❝ Life is too short to crop a screenshot ❞',
+'❝ I don\'t drive when they\'re predicting rain ❞',
+'❝ Are wee not men ❞',
+'❝ Let me tell you one thing all paths lead to symmetry ❞',
+'❝ Many roads lead to Rome ❞',
+'❝ Too many sheep, not enough shepards ❞',
+'❝ You cut deep joe ❞',
+'❝ At some point in your life, you went outside to play with your friends for the last time and never realized it ❞',
+'❝ When I said I liked it rough I didn’t mean my entire life ❞',
+'❝ At the end of the game, the pawn and the king go back in the same box ❞',
+'❝ The reason pawns can\'t move backwards is because if they could, they\'d kill their own kings in a heartbeat ❞',
+'❝ Climb mountains not so the world can see you, but so you can see the world ❞',
+'❝ It took me 19 days and 500 nights to forget about her ❞',
+'❝ It’s interesting how he manages to sound profound while not saying anything at all ❞',
+'❝ Innocence is peaceful ❞',
+'❝ In case of rain, the war will be held in the auditorium ❞',
+'❝ The ball will never be touched like that ❞',
+'❝ The more I drink, the less there is for the kids to drink ❞',
+'❝ These hands could\'ve moved mountains ❞',
+'❝ Don\'t be a fool, wrap your tool! ❞',
+'❝ Don\'t be silly, wrap your willy ❞',
+'❝ You can\'t spell advertisements without semen between the tits ❞',
+'❝ Tequila won\'t fix your life but it\'s worth a shot ❞',
+'❝ There\'s plenty more fish in the sea for me ❞',
+'❝ Edit your expectations ❞',
+'❝ Life is too short to read a bad book ❞',
+'❝ First we feel. Then we fall ❞',
+'❝ The one who giggle are the one who jiggle ❞',
+'❝ Birds that are born in a cage think that freedom is a crime ❞',
+'❝ Don\'t let the internet rush you. Noone is posting their failures ❞',
+'❝ The World will ask you who you are, and if you do not know, the world will tell you ❞',
+'❝ Sound is really just pressure waves in air ❞',
+'❝ Pichle mahine ka naam joon ❞',
+'❝ I wish I was where I was when I wished I was here ❞',
+'❝ There\'s a fine line between fishing and standing on the shore like an idiot ❞',
+'❝ After accomplishing a goal just look around to see whether you lost something or someone ❞',
+'❝ If I agreed with you, then we\'d both be wrong ❞',
+'❝ Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned ❞',
+'❝ If you are a puppet of your lowest instincts you will be puppeteered by anyone who can provoke them ❞',
+'❝ Some poor, phoneless fool is probably sitting next to a waterfall somewhere, completely unaware of how angry and scared he\'s supposed to be ❞',
+'❝ You thought you hurt me? I saw it coming two months ago when I was over thinking ❞',
+'❝ Silence is golden. The mouth is the source of calamity ❞',
+'❝ Everything I want to do is Illegal ❞',
+'❝ War is Peace, Freedom is Slavery, Ignorance is Strength ❞',
+'❝ I\'m not superstitious, but I am a little stitious ❞',
+'❝ He tells us that at one time the only thing which held him back from committing suicide was the thought of his father\'s inability to bear the loss ❞',
+'❝ Show me how those tits fart ❞',
+'❝ He who cleans his house expects visitors ❞',
+'❝ A child who is not embraced by the village will burn it down to feel its warmth ❞',
+'❝ Be water, my friend ❞',
+'❝ Live a good life. If there are gods and they are just, then they will not care how devout you have been, but will welcome you based on the virtues you have lived by. If there are gods, but unjust, then you should not want to worship them. If there are no gods, then you will be gone, but will have lived a noble life that will live on in the memories of your loved ones ❞',
+'❝ Just because deodorant says it lasts 48 hours doesn\'t mean you should take it as a personal challenge ❞',
+'❝ A fish with his mouth closed never gets caught ❞',
+'❝ Don\'t let it end like this. Tell them I said something ❞',
+'❝ You\'re not pretty enough to be this stupid ❞',
+'❝ Every quiet house was built with hammers and saws ❞',
+'❝ A wise man told me don’t argue with fools cause people from a distance can’t tell who is who ❞',
+'❝ Forgive others, not because they deserve forgiveness, but because you deserve peace ❞',
+'❝ Holding a grudge is like drinking poison and expecting the other person to die ❞',
+'❝ Even After All this time The Sun never says to the Earth, You owe me. Look What happens With a love like that, It lights the whole sky ❞',
+'❝ You cannot trust a man if you don\'t know his house ❞',
+'❝ The forest was shrinking but the trees kept voting for the axe, the axe was clever and convinced the trees that because his handle was made of wood he was one of them ❞',
+'❝ A flatterrer like you should live in a flat ❞',
+'❝ Shah jahan to his son aurangzeb from jail - He himself was kept in prison. In grief and sorrow, he wrote the following lines to his son Aruangzeb who had imprisoned him.  Praised be the Hindus in all cases, as they even offer water to their dead. And thou, my son, art a marvellous Musalman, As thou caused him in life to lament for lack of water. ❞',
+'❝ Sometimes you gotta give up the grams in the front to save the pounds in the back ❞',
+'❝ The value of being humbled by nature and winter is the most humbling season ❞',
+'❝ Don\'t can\'t eat! ❞',
+'❝ If you\'re losing a war, stop losing ❞',
+'❝ Don\'t trust fake quotes from the internet ❞',
+'❝ Don\'t attack Russia during Winter ❞',
+'❝ It doesn\'t matter how you eat as long as you can shit ❞',
+'❝ If you crouch, you are invisible to all forms of life ❞',
+'❝ A hole in your hand is better than a hand in your hole ❞',
+'❝ The enemy can\'t figure out what you\'re doing if even you don\'t know what you\'re doing ❞',
+'❝ If you don\'t let shit bother you, then you will never need to change your underwear ❞',
+'❝ If she challenges you at a game, show no mercy ❞',
+'❝ When the going gets tough, watch where you\'re going ❞',
+'❝ Place your bed near at war for nearer spawn ❞',
+'❝ Rule number one, never dig straight down ❞',
+'❝ It’s better to be pissed off, than be pissed on ❞',
+'❝ Remember, no Russia ❞',
+'❝ Never pay full price on Amazon, Lay low till it\'s on sale, then take advantage of them when they\'re at their weakest point ❞',
+'❝ If it’s wet, drink it ❞',
+'❝ When you are fighting a losing battle, press ALT+F4 ❞',
+'❝ Keyboard and mouse will always have the advantage over controller ❞',
+'❝ Never trust a fart ❞',
+'❝ Man who go to bed with itchy butt, wake up with stinky finger ❞',
+'❝ If you\'re not feeling yourself today, that means someone else is feeling you ❞',
+'❝ Don’t be silly, wrap your willy ❞',
+'❝ Don\'t kill the mongol envoy ❞',
+'❝ Never shit too hard, for the water may hit you from down under ❞',
+'❝ The floor is made out of floor ❞',
+'❝ She belongs to the street ❞',
+'❝ Never get into a fight with someone with cauliflower ears ❞',
+'❝ Don’t fight an ugly person they have nothing to lose ❞',
+'❝ We\'re all idiots, some just hide it better ❞',
+'❝ Measure twice, cut once ❞',
+'❝ Life is too short to crop a screenshot ❞',
+'❝ A plateau is the highest form of flattery ❞',
+'❝  An anti-feminist man will berate a woman for not cleaning the dishes , a feminist man will smoke a joint , quote Rumi but will still not clean the dishes ❞',
+
+'❝ Stand amongst the ashes of a trillion dead souls and ask the ghosts if honor matters ❞',
+'❝ How old would you be if you didn\'t know how old you were? ❞',
+'❝ Fuck me if I\'m wrong, but dinosaurs still exist right? ❞',
+'❝ We\'re no strangers to love ❞'
+
+
+];
+
+function newQuote() {
+    var randomNumber = Math.floor(Math.random() * (quotes.length));
+    document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+}
+</script>
+
+
+
     <header>
       <nav>
         <a href="#home">Home</a>
-        <a href="#preferences">Preferences</a>
+        <a href="#recommendations">Recommendations</a>
         <a href="#blogs">Blogs</a>
         <a href="#bookmarks">Bookmarks</a>
         <a href="#articles">Articles</a>
@@ -658,12 +828,35 @@ window.onclick = function(event) {
 
 	    <section id="home"> <!-- HOME -->
 		    <hr>
+		    <!--<img loading="lazy"  src="me.jpg" width="150" height="auto"> -->
+
+
+		<center><img src="media/me.jpg" width="130"></center>
+
+		<br>
+  <special-quote style="text-align: center; color: #a52a2a;">
+    <em style="color: var(--cyan);"><div id="quoteDisplay" class="typing-style">
+	<!-- Quotes will display here -->
+    </div></em>
+  </special-quote>
+
+  <!-- Print new quote with every refresh -->
+  <body onload="newQuote()">
+		<br>
+
+
+
+
+
+
+
+
 		    <p><strong>राम राम, </strong>I'm   Ram, a firm votary of <a href="gnu.org">GNU/LINUX</a> from the deserts of Rajasthan. This is my website on the Internet and here  I will try to express my thoughts freely and lucidly.   </p>
 	    <br>
 	    <p> A little preface to my <a href="#blogs">blogs</a> and on my selection of <a href="#articles">articles</a> that I think would be good for a new visitor. There can be some misrepresentations of facts, stories, folklores, and data but I promise I will try to write my sources wherever it's necessary. I'm doing this to improve my writing skills and organize all of my notes in one place. </p>
 	    <p>Mostly my rambling will wander around Politics, Philosophy, and Medieval Indian history characters. I'm also thinking about writing a diary for a long time, let's see if I stay motivated.</p>
 	    <p>Over the course of the last 3 years, I have come across some cool websites which can be useful to you.  You can check them out in the <a href="#bookmarks">bookmarks</a> section.</p>
-	    <p>Now, I'm also maintaining a list of the media that I'm consooming in the <a href="#preferences">preferences</a> section. If you have any suggestions or recommendations for me, you can message me over <a href="#contacts">here</a>.
+	    <p>Now, I'm also maintaining a list of the media that I'm consooming in the <a href="#recommendations">recommendations</a> section. If you have any suggestions or recommendations for me, you can message me over <a href="#contacts">here</a>.
 
 
 
@@ -697,7 +890,7 @@ window.onclick = function(event) {
 
 
 
-      <section id="preferences"> <!-- Preferences -->
+      <section id="recommendations"> <!-- recommendations -->
 	      <hr>
 	<a href="#movies">Movies</a><br>
 	<a href="#books">Books</a><br>
@@ -752,7 +945,7 @@ window.onclick = function(event) {
 		<hr>
         	<p>Now it works</p>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 </section> -->
 
 
@@ -2189,6 +2382,68 @@ window.onclick = function(event) {
 					<br>
 				</div>
 			</details>
+			<details>
+					<summary>Army of Shadows</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review:</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>A Beautiful Summer Day</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review:</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+			<details>
+					<summary>Spy who came in from Cold</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong> </p>
+					<br>
+
+					<details>
+						<summary>My Review:</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img loading="lazy" src="" width="150" height="150" alt="">
+					<br>
+				</div>
+			</details>
+
+
 
 	<br>
 	<hr>
@@ -2240,6 +2495,13 @@ window.onclick = function(event) {
 		<li>Waking Life (2001)</li>
 		<li>Wild (2014)</li>
 		<li>Young Adam</li>
+		<li>As Good as it gets</li>
+		<li>The Favourite</li>
+		<li>All Quiet on the Western Front</li>
+		<li>Andrei Rublev</li>
+		<li>The Trial of Chicago Seven</li>
+		<li>Black Mirror: Bandersnatch</li>
+
 	</ul>
 <!--</span>
 <button style="background-color:#017354; color:#eadab1; border-color:#eadab1;" onclick="myFunction()" id="myBtn">&nbspRead more&nbsp</button>
@@ -2275,12 +2537,13 @@ moreText.style.display = "inline";
 			<li>As good as it gets</li>
 			<li>The man from earth</li>
 		</ul>
+	<h6 class="pricedown">Pricedown</h6>
 
 
 
 
 	<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 
 			    <hr>
@@ -2487,7 +2750,7 @@ moreText.style.display = "inline";
 		<li>The Idiot</li>
 	</ul>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -2947,11 +3210,50 @@ moreText.style.display = "inline";
 					<br>
 				</div>
 				</details>
+				<details>
+					<summary>Twin Peaks</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong>  </p>
+					<br>
+					<details>
+						<summary>My Review:</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img class="center" loading="lazy" src="" width="150" height="150">
+					<br>
+				</div>
+				</details>
+				<details>
+					<summary>After Life</summary>
+				<div class="details-content">
+					<br>
+					<p><strong><h5 style="display:inline">Plot:</h5></strong>  </p>
+					<br>
+					<details>
+						<summary>My Review:</summary>
+					<div class="details-content">
+					<br>
+						<p>BT</p>
+					<br>
+					</div>
+					</details>
+
+					<img class="center" loading="lazy" src="" width="150" height="150">
+					<br>
+				</div>
+				</details>
+
 				</details>
 
 
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3005,9 +3307,12 @@ moreText.style.display = "inline";
 			<li>Just Cause 2</li>
 			<li>Driver San Francisco</li>
 			<li>Need for Speed Most Wanted</li>
+			<li>Pocket Tank</li>
+			<li>High Hell</li>
+			<li>Venge</li>
 		</ul>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3074,7 +3379,7 @@ moreText.style.display = "inline";
 			<li>The Big Short</li>
 			<li>Margin Call</li>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3095,7 +3400,7 @@ moreText.style.display = "inline";
 		<hr>
         	<p>Let me find some first:)</p>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3116,7 +3421,7 @@ moreText.style.display = "inline";
 		<hr>
         	<p>Now it works</p>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3150,7 +3455,7 @@ moreText.style.display = "inline";
 		<hr>
         	<p>Now it works</p>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3209,7 +3514,7 @@ moreText.style.display = "inline";
 		<hr>
         	<p>Now it works</p>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3229,7 +3534,7 @@ moreText.style.display = "inline";
 		<hr>
         	<p>Now it works</p>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3250,7 +3555,7 @@ moreText.style.display = "inline";
 		<hr>
         	<p>Now it works</p>
 		<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 				    <hr>
 		    <div class=gli>
@@ -3284,7 +3589,7 @@ moreText.style.display = "inline";
 	<ul><a href="#cool-jokes">Cool Jokes</a></ul>
 	<ul><a href="#uncool-jokes">Uncool Jokes</a></ul>
 	<br>
-        <p><a href="#preferences">← Go back</a></p>
+        <p><a href="#recommendations">← Go back</a></p>
 
 			    <hr>
 		    <div class=gli>
